@@ -169,7 +169,7 @@ if __name__ == "__main__":
 
     #initializing modules of pygame library
     pygame.init()
-    framespersecond_clock= pygame.time.clock()
+    framespersecond_clock= pygame.time.Clock()
 
     #set the title on top of game window
     pygame.display.set_caption('Flappy Bird Game')
