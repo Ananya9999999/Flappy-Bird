@@ -17,6 +17,39 @@ background_image= 'images/background.png'
 birdplayer_image= 'images/bird.png'
 sealevel_image= 'images/base.jfif'
 
+while True:
+    #sets the coordinate of flappy bird
+    horizontal= int(window_width/5)
+    vertical= int((window_height - game_images['flappybird'].get_height())/2)
+
+    #for sealevel
+    ground=0
+    while True:
+        for event in pygame.event.get():
+
+            #if user clicks on cross button, close the game
+            if event.type== QUIT or (event.type== KEYDOWN and event.key== K_ESCAPE):
+                pygame.quit()
+                #exit the program
+                sys.exit()
+
+            #if the user presses space or up key, start the game
+            elif event.type== KEYDOWN and (event.key== K_SPACE or event.key== K_UP):
+                flappygame()
+
+            #if user doesn't press anykey Nothing happen
+            else:
+                window.blit(game_images['background'], (0, 0))
+                window.blit(game_images['flappybird'], (horizontal, vertical))
+                window.blit(game_images['sealevel'], (ground, elevation))
+
+                #Just refresh the screen
+                pygame.display.update()
+
+                #set the rate of frame per second
+                framespersecond_clock.tick(framespersecond)
+
+        
 #program where the game starts
 if __name__ == "__main__":
 
