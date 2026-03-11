@@ -37,6 +37,7 @@ CSS – Styling and layout
 JavaScript – Game logic and mechanics
 
 <h2>📂 Project Structure</h2>
+
 ```
 Flappy-Bird
 │
